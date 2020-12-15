@@ -1,6 +1,8 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: ['./pages/**/*.js', './components/**/*.js'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     container: {
       center: true,
@@ -9,10 +11,15 @@ module.exports = {
         md: '8px',
       },
     },
-    extend: {},
+    extend: {
+      colors: {
+        cyan: colors.cyan,
+      },
+    },
   },
   variants: {
-    extend: {},
+    borderWidth: ['responsive', 'hover'],
+    padding: ['responsive', 'hover'],
   },
   plugins: [
     require('@tailwindcss/forms'),
