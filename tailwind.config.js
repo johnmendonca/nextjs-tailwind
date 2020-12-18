@@ -20,6 +20,9 @@ module.exports = {
   variants: {
     borderWidth: ['responsive', 'hover'],
     padding: ['responsive', 'hover'],
+    extend: {
+      translate: ['dark']
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),

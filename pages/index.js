@@ -4,7 +4,7 @@ import Header from 'components/headers/Underline'
 
 export default function Index() {
   return (
-    <Layout className="bg-gray-50 text-gray-800 dark:bg-gray-800 dark:text-white">
+    <Layout className="bg-gray-50 text-gray-800 dark:bg-gray-800 dark:text-white transition-colors duration-200">
       <Row>
         <Container>
           <Header />

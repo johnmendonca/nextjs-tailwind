@@ -8,7 +8,7 @@ import Transition from 'components/util/Transition'
 import useClickAway from 'components/util/useClickAway'
 import TwitterIcon from 'components/social/TwitterIcon'
 import DiscordIcon from 'components/social/DiscordIcon'
-import { toggleDarkMode } from 'components/util/useDarkMode'
+import DarkModeToggle from 'components/widgets/DarkModeToggle'
 
 const links = [
   { href: "/one", title: "One" },
@@ -69,8 +69,8 @@ const Header = ({dark}) => {
             <li className="inline-block -mb-1 mx-2 h-6 w-6">
               <DiscordIcon/>
             </li>
-            <li className="inline-block -mb-1 mx-2 h-6 w-6 cursor-pointer" onClick={() => toggleDarkMode()}>
-              D
+            <li className="inline-block -mb-1 mx-2 h-6 w-6">
+              <DarkModeToggle />
             </li>
           </ul>
         </div>
