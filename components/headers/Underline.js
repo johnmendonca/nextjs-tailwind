@@ -48,8 +48,8 @@ const Header = ({dark}) => {
               </h2>
             </a>
           </Link>
-          <a onClick={() => setMobileMenuOpen(true)} className="cursor-pointer">
-            <div className="inline-block md:hidden w-8 h-8 m-2">
+          <a onClick={() => setMobileMenuOpen(true)} className="md:hidden cursor-pointer">
+            <div className="inline-block w-8 h-8 m-2">
               <svg fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </div>
           </a>
