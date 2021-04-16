@@ -1,7 +1,7 @@
 module.exports = {
   plugins: {
     'postcss-import': {},
-    '@tailwindcss/jit': {},
+    'tailwindcss': {},
     'postcss-flexbugs-fixes': {},
     autoprefixer: {
       flexbox: 'no-2009'
