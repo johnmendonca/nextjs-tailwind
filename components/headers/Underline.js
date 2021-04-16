@@ -1,6 +1,3 @@
-// This header requires the hover variant to be activated in the tailwind
-// config for borderWidth and padding
-
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Router from 'next/router'
