@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Router from 'next/router'
-import Transition from 'components/util/Transition'
+import { Transition } from '@headlessui/react'
 import useClickAway from 'components/util/useClickAway'
 import TwitterIcon from 'components/social/TwitterIcon'
 import DiscordIcon from 'components/social/DiscordIcon'
@@ -74,48 +74,47 @@ const Header = ({dark}) => {
       </nav>
 
       <Transition
+        className="absolute top-0 inset-x-0 p-2 origin-top-right md:hidden bg-transparent"
         show={mobileMenuOpen}
-        enter="transition ease-out duration-200"
+        enter="transition transform ease-out duration-200"
         enterFrom="opacity-0 scale-95"
         enterTo="opacity-100 scale-100"
-        leave="transition ease-in duration-100"
+        leave="transition transform ease-in duration-100"
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <div ref={mobileMenuRef} className="absolute top-0 inset-x-0 p-2 transform origin-top-right md:hidden bg-transparent">
-          <div className="rounded border pl-2 pr-6 py-4 -m-px dark:bg-gray-800 dark:border-gray-500 bg-white border-gray-200">
-            <div className="text-right">
-              <a onClick={() => setMobileMenuOpen(false)} className="cursor-pointer">
-                <div className="inline-block w-8 h-8 m-2">
-                  <svg fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12"></path></svg>
-                </div>
+        <div ref={mobileMenuRef} className="rounded border pl-2 pr-6 py-4 -m-px dark:bg-gray-800 dark:border-gray-500 bg-white border-gray-200">
+          <div className="text-right">
+            <a onClick={() => setMobileMenuOpen(false)} className="cursor-pointer">
+              <div className="inline-block w-8 h-8 m-2">
+                <svg fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12"></path></svg>
+              </div>
+            </a>
+          </div>
+          <ul className="uppercase font-medium text-xl">
+            <Link href="/">
+              <a>
+                <li className="mx-2 lg:mx-4 px-1 pb-3 mb-1 border-b-2">
+                  <h2>Home</h2>
+                </li>
               </a>
-            </div>
-            <ul className="uppercase font-medium text-xl">
-              <Link href="/">
+            </Link>
+            {links.map(({href, title}) =>
+              <Link href={href} key={title}>
                 <a>
-                  <li className="mx-2 lg:mx-4 px-1 pb-3 mb-1 border-b-2">
-                    <h2>Home</h2>
+                  <li className="mx-2 lg:mx-4 px-1 py-3 border-b-2">
+                    {title}
                   </li>
                 </a>
               </Link>
-              {links.map(({href, title}) =>
-                <Link href={href} key={title}>
-                  <a>
-                    <li className="mx-2 lg:mx-4 px-1 py-3 border-b-2">
-                      {title}
-                    </li>
-                  </a>
-                </Link>
-              )}
-              <li className="inline-block mx-2 mt-6 h-6 w-6">
-                <TwitterIcon/>
-              </li>
-              <li className="inline-block mx-2 mt-6 h-6 w-6">
-                <DiscordIcon/>
-              </li>
-            </ul>
-          </div>
+            )}
+            <li className="inline-block mx-2 mt-6 h-6 w-6">
+              <TwitterIcon/>
+            </li>
+            <li className="inline-block mx-2 mt-6 h-6 w-6">
+              <DiscordIcon/>
+            </li>
+          </ul>
         </div>
       </Transition>
     </header>
