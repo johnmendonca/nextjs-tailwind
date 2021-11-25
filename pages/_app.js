@@ -1,4 +1,4 @@
-import { DarkModeProvider } from 'components/util/useDarkMode'
+import { DarkModeProvider } from 'components/util/useDarkDefaultMode'
 import 'styles/index.css'
 
 function MyApp({ Component, pageProps }) {

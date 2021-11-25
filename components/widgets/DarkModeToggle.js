@@ -3,7 +3,7 @@
 import React from 'react'
 import { Switch } from "@headlessui/react"
 import { MoonIcon } from '@heroicons/react/solid'
-import { useDarkMode } from 'components/util/useDarkMode'
+import { useDarkMode } from 'components/util/useDarkDefaultMode'
 
 const DarkModeToggle = () => {
   const [isDark, toggleDarkMode] = useDarkMode() 
