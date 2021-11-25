@@ -50,7 +50,7 @@ const Header = ({dark}) => {
               <svg fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </div>
           </a>
-          <ul className="hidden md:block font-medium text-base lg:text-xl tracking-wide">
+          <ul className="hidden md:flex flex-row items-baseline font-medium text-base lg:text-xl tracking-wide">
             {links.map(({href, title}) =>
               <Link href={href} key={title}>
                 <a>
@@ -66,7 +66,7 @@ const Header = ({dark}) => {
             <li className="inline-block -mb-1 mx-2 h-6 w-6">
               <DiscordIcon/>
             </li>
-            <li className="inline-block -mb-1 mx-2 h-6">
+            <li className="inline-block -mb-1 ml-4 h-6">
               <DarkModeToggle />
             </li>
           </ul>
