@@ -6,7 +6,7 @@ import { MoonIcon } from '@heroicons/react/solid'
 import { useDarkMode } from 'components/util/useDarkDefaultMode'
 
 const DarkModeToggle = () => {
-  const [isDark, toggleDarkMode] = useDarkMode() 
+  const [isDark, toggleDarkMode] = useDarkMode()
 
   return (
     <Switch.Group as="div" className="flex items-center space-x-1">

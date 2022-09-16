@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Layout, { Row, Main, Container } from 'components/layouts/WideStretched'
 import Header from 'components/headers/Underline'
 
